@@ -1,0 +1,37 @@
+#1122 Relative Sort Array
+https://leetcode.com/problems/relative-sort-array/
+
+
+arr1 arr2
+
+arr1 >= arr2
+
+arr2 is distinct
+
+length of arr1: N
+length of arr2: M
+
+method 1.
+count sort + rest elements -> rest arr -> 나중에 sort
+
+count sort -> arr1 write
+rest arr elements -> sort -> arr1 append
+
+Time: O(N lg N)
+Space: O(N)
+
+method 2.
+method 1과 동일
+
+sort 방법만 변경
+rest arr elements -> count sort (0<= N <= 1000 (D))
+
+Time: O(N)
+Space: O(N + D) -> O(N) because N = D in this case
+
+method 3.
+전체를 count sort
+
+step 1. count
+step 2. arr2를 보면서 count 값을 1씩 빼내가며 arr1에 append
+step 3. arr2를 전부다 본 이후에는 다시 count 값을 0~1000까지 보면서 1씩 빼내가며 arr1에 append

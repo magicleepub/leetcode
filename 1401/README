@@ -1,0 +1,29 @@
+#1401 Circle and Rectangle Overlapping
+https://leetcode.com/problems/circle-and-rectangle-overlapping/
+
+
+원과 직사각형이 주어졌을때
+서로 겹치는 부분이 있는지 여부 return 하는 함수 작성
+
+x1 <= x2
+y1 <= y2
+
+method 1.
+# case 1. 직사각형의 모서리 중 하나 이상이 원 안으로 들어간 경우
+
+case 2. 직사각형 안에 원의 원점이 들어가는 경우
+x1 <= x_center && x_center <= x2
+y1 <= y_center && y_center <= y2
+True
+
+case 3. 직사각형의 변 중 하나 이상이 원과 닿는 경우
+x 축과 평행한 변 case: (x1, y) - (x2, y)
+
+if (x1 <= x_center && x_center <= x2) 
+  return |y - y_center| <= r
+
+foreach x in [x1, x2]:
+(x - x_center) * (x - x_center) + (y - y_center) * (y - y_center) <= r * r
+True
+
+case 4. (else) case 1, 2, 3이 모두 아닐 경우

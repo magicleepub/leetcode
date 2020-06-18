@@ -1,0 +1,12 @@
+#504 Base 7
+https://leetcode.com/problems/base-7/
+
+
+method 1.
+num이 0일 경우, "0" string 출력
+
+num이 음수일 경우 flag로 표시 & num의 절대값을 취함
+string을 만들 때 음수 인 경우 -를 붙여준다.
+
+계속 7로 나누어주며 나머지 계산
+나머지를 모아 reverse order로 string appending

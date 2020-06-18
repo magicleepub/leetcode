@@ -1,0 +1,11 @@
+https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/
+
+n
+
+각각의 자릿수 -> 전부 곱한 값 - 전부 더한 값
+
+method 1.
+D = 10
+n % D
+n /= D
+n % D

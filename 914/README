@@ -1,0 +1,43 @@
+#914 Word Subsets
+https://leetcode.com/problems/word-subsets/
+
+method 1.
+
+N <- A.length , B.length
+
+for each a in A: <- O(N)
+  for all b in B: <- O(N)
+    if b is a subset of a:
+
+Time: O(N^2)
+
+A[i].length <= 10
+B[i].length <= 10
+
+A[i][j] in ['a', .., 'z'] <- 26 가지
+
+counting method:
+
+a -> 'a'..'z' counting
+b -> 'a'..'z' counting
+모든 counting 한 결과가 a['a'] >= b['a'] .. a['z'] >= b['z']
+->
+b is a subset of a
+
+method 2.
+for all b in B: <- O(N)
+
+b counting 전부 merge
+
+B -> ["l", "e"] -> "le"
+B -> ["wrr", "wr"] -> "wrr"
+     ["rr", "wr"] -> "wrr"
+
+preprocessing: C <- merge for all b in B <- O(N)
+
+for each a in A: <- O(N)
+  check C is a subset of a
+
+
+time: O(N)
+space: O(D) <- D = 26 (lowercase letters 'a'..'z')

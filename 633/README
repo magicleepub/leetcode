@@ -1,0 +1,37 @@
+#633 Sum of Square Numbers
+https://leetcode.com/problems/sum-of-square-numbers/
+
+method 1.
+for each a where a * a <= c ... O(sqrt(c))
+  for each b where b * b <= c ... O(sqrt(c))
+    if a * a + b * b == c
+      return true 
+return false
+
+Time: O(c)
+Space: O(1)
+
+
+method 2.
+a: 0 .. sqrt(c)
+b: floor(sqrt(c)) .. 0
+
+(while) condition: a <= b
+  a * a ?? c - b * b
+  lhs <- a * a
+  rhs <- c - b * b
+  case1: lhs == rhs
+    return true
+  case2: lhs < rhs
+    ++a
+  case3: lhs > rhs
+    --b
+return false
+
+Time: O(sqrt(c))
+Space: O(1)
+
+error case:
+a <- 911
+b <- 46332
+828100 + 2146654224

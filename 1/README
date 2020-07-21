@@ -1,0 +1,28 @@
+#1 Two Sum
+https://leetcode.com/problems/two-sum/
+
+given an array (A) with unique items
+return indices
+
+N is the length of the given array
+
+Approach 1.
+sort <- O(N lg N)
+i, j
+i는 0번 item 부터 증가하는 방향
+j는 N - 1번 item 부터 감소하는 방향
+A[i] + A[j] > target
+++i
+A[i] + A[j] < target
+--j
+
+Approach 2.
+HashTable <- unordered_map
+
+for each a in A <- O(N)
+  if HT.exist?(target - a)
+    make vector with index of a, HT[target - a]
+    return vector
+  HT.insert(a, index of a)
+
+Time Complexity: O(N)
